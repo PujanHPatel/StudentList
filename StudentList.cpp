@@ -86,16 +86,13 @@ void deleteStudent(vector<studentInfo*>* studentVector) {//delete vector content
     if (studentVector -> empty() == true) {
         cout << "List is empty" << endl;
     }
-    else {
+    else if{
         for (vector<studentInfo*>:: iterator find = studentVector -> begin(); find != studentVector -> end(); ++find) {
             if ((*find) -> studentID == studentIDSearch) {
 	            delete *find;
 	            studentVector -> erase(find);
 	            return;
-            }
-            else {
-                cout << "Student does not exist" << endl;
-            }
+            }           
         }
     }     
 }
