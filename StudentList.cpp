@@ -54,7 +54,6 @@ int main() {//main method
         }
         else if(strcmp(input, "DELETE") == 0) {
             deleteStudent(&studentVector);
-            cout << "Student Deleted" << endl;
         }
         else if(strcmp(input, "QUIT") == 0) {
             running = false;
@@ -93,6 +92,7 @@ void deleteStudent(vector<studentInfo*>* studentVector) {//delete vector content
 	            delete *find;
 	            studentVector -> erase(find);
                 studentExist = true;
+                cout << "Student Deleted" << endl;
 	            return;
             }
             if(studentExist == false) {
