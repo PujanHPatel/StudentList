@@ -81,6 +81,7 @@ void printStudent(vector<studentInfo*> studentVector) {//print vector contents (
 }
 void deleteStudent(vector<studentInfo*>* studentVector) {//delete vector content of specifc ID
     int studentIDSearch;
+    bool studentExist = false;
     cout << "Please input ID of student you want to delete" << endl;
     cin >> studentIDSearch;
     if (studentVector -> empty() == true) {
@@ -91,8 +92,12 @@ void deleteStudent(vector<studentInfo*>* studentVector) {//delete vector content
             if ((*find) -> studentID == studentIDSearch) {
 	            delete *find;
 	            studentVector -> erase(find);
+                studentExist = true;
 	            return;
-            }           
+            }
+            if(studentExist == false) {
+                cout << "Student does not exist" << endl;
+            }
         }
     }     
 }
